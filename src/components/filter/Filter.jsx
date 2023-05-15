@@ -2,13 +2,15 @@ import React from 'react';
 import styles from './filter.module.css';
 import PropTypes from 'prop-types';
 
-const Filter = props => {
-  const { filter, handleChangeFilterValue } = props;
-
+const Filter = ({ filter, handleChangeFilterValue }) => {
   return (
     <div>
       <p>Find contacts by name</p>
-      <input className={styles.inputFilter} value={filter} onChange={handleChangeFilterValue}></input>
+      <input
+        className={styles.inputFilter}
+        value={filter}
+        onChange={handleChangeFilterValue}
+      ></input>
     </div>
   );
 };
@@ -16,6 +18,6 @@ const Filter = props => {
 Filter.propTypes = {
   filter: PropTypes.string.isRequired,
   handleChangeFilterValue: PropTypes.func.isRequired,
-}
+};
 
 export default Filter;

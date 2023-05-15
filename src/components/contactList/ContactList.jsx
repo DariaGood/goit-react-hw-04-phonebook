@@ -2,13 +2,11 @@ import React from 'react';
 import styles from './contactList.module.css';
 import PropTypes from 'prop-types';
 
-function ContactList(props) {
-  const { onDeleteContact, filterListContacts } = props;
-
+const ContactList = ({ filterListContacts, onDeleteContact }) => {
   return (
     <div>
       <ul className={styles.contactList}>
-        {filterListContacts.map(item => (
+        {filterListContacts.map((item) => (
           <li className={styles.contactItem} key={item.id}>
             <div>
               {item.name}: {item.number}
@@ -24,7 +22,7 @@ function ContactList(props) {
       </ul>
     </div>
   );
-}
+};
 
 ContactList.propTypes = {
   filterListContacts: PropTypes.array.isRequired,
@@ -32,3 +30,5 @@ ContactList.propTypes = {
 };
 
 export default ContactList;
+
+
